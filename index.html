@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồng Thịnh — Tôi Yêu Cuộc Sống | Trang Cá Nhân Truyền Cảm Hứng</title>
+    <meta name="description" content="Chào mừng bạn đến với website của Hồng Thịnh - Tôi Yêu Cuộc Sống. Lan tỏa năng lượng tích cực, niềm vui, sự gắn kết và tình yêu cuộc sống mỗi ngày.">
+    <meta name="keywords" content="Hồng Thịnh, Tôi Yêu Cuộc Sống, Hong Thinh, 0344126866, phong cách sống, năng lượng tích cực">
+    <meta name="author" content="Hồng Thịnh">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hồng Thịnh — Tôi Yêu Cuộc Sống">
+    <meta property="og:description" content="Lan tỏa năng lượng tích cực, sẻ chia yêu thương và tận hưởng từng khoảnh khắc tươi đẹp của cuộc đời.">
+    <meta property="og:image" content="./assets/images/ao-dai-thinh.jpg">
+
+    <!-- Favicon (Emoji SVG) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        accent: {
+                            50: '#fff1f2',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-teal-500 selection:text-white relative min-h-screen">
+
+    <!-- Reading Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-teal-500 via-cyan-400 to-rose-500 z-50 w-0 transition-all duration-150"></div>
+
+    <!-- Background Ambient Glows -->
+    <div class="bg-hero-glow bg-teal-400/20 w-[550px] h-[550px] -top-40 -left-40"></div>
+    <div class="bg-hero-glow bg-rose-400/20 w-[550px] h-[550px] top-96 -right-40"></div>
+    <div class="bg-hero-glow bg-amber-400/15 w-[450px] h-[450px] bottom-40 left-1/3"></div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-teal-600 via-teal-500 to-rose-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/25 group-hover:scale-105 transition-transform">
+                        <span class="font-bold text-lg font-serif">HT</span>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight block text-slate-900 dark:text-white">
+                            Hồng Thịnh
+                        </span>
+                        <span class="text-xs font-semibold text-rose-500 tracking-wider flex items-center gap-1">
+                            <i class="fa-solid fa-heart text-[10px]"></i> Tôi Yêu Cuộc Sống
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#home" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Trang chủ
+                    </a>
+                    <a href="#about" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Về Tôi
+                    </a>
+                    <a href="#philosophy" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Triết Lý Sống
+                    </a>
+                    <a href="#gallery" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Khoảnh Khắc
+                    </a>
+                    <a href="#wishes" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Sổ Lưu Bút
+                    </a>
+                    <a href="#contact" class="px-3.5 py-2 rounded-xl text-sm font-medium hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-all">
+                        Liên Hệ
+                    </a>
+                    <a href="./video-studio/index.html" target="_blank" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/40 transition-all flex items-center gap-1.5" title="Mở Studio Dựng Phim & Lời Bình">
+                        <i class="fa-solid fa-video text-xs"></i> Studio Dựng Phim
+                    </a>
+                </nav>
+
+                <!-- Action Buttons: Theme toggle & Direct Contact -->
+                <div class="hidden md:flex items-center gap-3">
+                    <!-- Dark/Light Mode Switcher -->
+                    <button id="theme-toggle" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-amber-400 flex items-center justify-center hover:scale-105 active:scale-95 transition-all" title="Chuyển chế độ sáng/tối">
+                        <i class="fa-solid fa-moon theme-icon-moon text-base"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun text-base hidden"></i>
+                    </button>
+
+                    <!-- Quick Zalo Call -->
+                    <a href="https://zalo.me/0344126866" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold text-sm shadow-md shadow-teal-600/30 flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all">
+                        <i class="fa-solid fa-comments"></i>
+                        <span>Zalo: 0344126866</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button id="theme-toggle-mobile" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-amber-400 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-moon theme-icon-moon"></i>
+                        <i class="fa-solid fa-sun theme-icon-sun hidden"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 flex items-center justify-center text-lg focus:outline-none" aria-label="Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 glass-panel border-b border-slate-200 dark:border-slate-800 shadow-xl space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Trang chủ</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Về Tôi</a>
+            <a href="#philosophy" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Triết Lý Sống</a>
+            <a href="#gallery" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Khoảnh Khắc</a>
+            <a href="#wishes" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Sổ Lưu Bút</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium hover:bg-teal-500/10 hover:text-teal-600 dark:hover:text-teal-400">Liên Hệ</a>
+            <a href="./video-studio/index.html" target="_blank" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-semibold text-rose-600 dark:text-rose-400 bg-rose-50/50 dark:bg-rose-950/30 hover:bg-rose-100/50 flex items-center gap-2">
+                <i class="fa-solid fa-video text-sm"></i> Studio Dựng Phim AI
+            </a>
+            <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                <a href="https://zalo.me/0344126866" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-teal-600 text-white font-semibold text-sm">
+                    <i class="fa-solid fa-comments mr-2"></i> Nhắn Zalo: 0344126866
+                </a>
+                <a href="https://www.facebook.com/thinh.nguyen.10591?locale=vi_VN" target="_blank" class="w-full text-center py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm">
+                    <i class="fa-brands fa-facebook mr-2"></i> Facebook Hồng Thịnh
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Column: Hero Text & Call to Action -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-up" data-aos-duration="900">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel shadow-sm text-xs sm:text-sm font-semibold text-teal-700 dark:text-teal-300 border border-teal-500/30">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 -ml-4"></span>
+                        <span>Không Gian Chia Sẻ Năng Lượng Tích Cực</span>
+                        <span class="text-rose-500">✨</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+                        <span class="block text-slate-900 dark:text-white">Xin chào, tôi là</span>
+                        <span class="text-gradient font-serif">Hồng Thịnh</span>
+                        <span class="block mt-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-rose-500 dark:text-rose-400">
+                            🌿 Tôi Yêu Cuộc Sống
+                        </span>
+                    </h1>
+
+                    <!-- Hero Subtitle -->
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Mỗi sớm mai thức dậy là một món quà vô giá của tạo hóa. Tôi yêu từng giọt sương mai, từng nhành hoa ngọn cỏ, những câu chuyện ấm áp của tình người và khát khao lan tỏa một tinh thần lạc quan, an yên và tràn đầy sức sống.
+                    </p>
+
+                    <!-- Key highlights chips -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+                        <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                            <i class="fa-solid fa-sun text-amber-500 mr-1.5"></i> Lạc Quan Mỗi Ngày
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+                            <i class="fa-solid fa-heart text-rose-500 mr-1.5"></i> Trân Quý Tình Thân
+                        </span>
+                        <span class="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                            <i class="fa-solid fa-handshake text-blue-500 mr-1.5"></i> Kết Nối Chân Thành
+                        </span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="https://zalo.me/0344126866" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-teal-600 via-teal-500 to-cyan-500 hover:from-teal-700 hover:to-cyan-600 text-white font-bold text-base shadow-xl shadow-teal-600/30 flex items-center justify-center gap-3 hover:-translate-y-0.5 active:translate-y-0 transition-all">
+                            <i class="fa-solid fa-phone-volume text-lg"></i>
+                            <span>Liên Hệ / Zalo: 0344126866</span>
+                        </a>
+                        <a href="https://www.facebook.com/thinh.nguyen.10591?locale=vi_VN" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl glass-panel hover:bg-slate-200/50 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-100 font-bold text-base flex items-center justify-center gap-3 border border-slate-300 dark:border-slate-700 hover:-translate-y-0.5 transition-all">
+                            <i class="fa-brands fa-facebook text-blue-600 text-xl"></i>
+                            <span>Facebook Cá Nhân</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick stats / Live feeling -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 dark:border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl font-black text-teal-600 dark:text-teal-400">100%</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Năng lượng vui vẻ</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl font-black text-rose-500">365+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Ngày yêu đời</div>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <div class="text-2xl font-black text-amber-500">∞</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Nụ cười & Sẻ chia</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Profile Card with Áo Dài photo -->
+                <div class="lg:col-span-5 relative flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        
+                        <!-- Glowing aura behind portrait -->
+                        <div class="absolute -inset-3 bg-gradient-to-tr from-teal-500/40 via-cyan-400/30 to-rose-500/40 rounded-3xl blur-2xl opacity-75 animate-pulse"></div>
+
+                        <!-- Card Frame -->
+                        <div class="relative rounded-3xl p-3 sm:p-4 glass-panel border-2 border-white/60 dark:border-slate-700/60 shadow-2xl overflow-hidden group">
+                            
+                            <!-- Image Container -->
+                            <div class="relative rounded-2xl overflow-hidden img-zoom-container bg-slate-900 aspect-[3/4]">
+                                <img src="./assets/images/ao-dai-thinh.jpg" 
+                                     alt="Hồng Thịnh - Tôi Yêu Cuộc Sống trong tà áo dài truyền thống" 
+                                     class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer"
+                                     data-full-img="./assets/images/ao-dai-thinh.jpg"
+                                     data-caption="Hồng Thịnh - Rạng rỡ trong tà áo dài truyền thống Việt Nam">
+                                
+                                <!-- Subtle gradient overlay at bottom of image -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none"></div>
+
+                                <!-- Zoom badge icon -->
+                                <button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur flex items-center justify-center text-xs transition-colors" title="Phóng to ảnh">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+
+                                <!-- Overlay Tag on Image -->
+                                <div class="absolute bottom-4 left-4 right-4 text-white">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/90 text-white backdrop-blur mb-1.5">
+                                        <i class="fa-solid fa-circle-check text-[10px]"></i> Hồng Thịnh
+                                    </span>
+                                    <p class="text-sm font-medium text-slate-100 drop-shadow">
+                                        Tự hào nét đẹp truyền thống & tình yêu quê hương
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Floating Badges -->
+                            <div class="mt-4 flex items-center justify-between px-2">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Sống An Nhiên • Yêu Đời</span>
+                                </div>
+                                <a href="tel:0344126866" class="text-xs font-bold text-teal-600 dark:text-teal-400 hover:underline flex items-center gap-1">
+                                    <i class="fa-solid fa-phone"></i> 0344.126.866
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro-Badge 1 -->
+                        <div class="absolute -top-4 -left-4 sm:-left-6 px-4 py-2.5 rounded-2xl glass-panel shadow-lg border border-white/60 dark:border-slate-700 flex items-center gap-2.5 animate-float z-20">
+                            <span class="text-xl">🌸</span>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800 dark:text-white">Tâm An Lòng Thản Nhiên</p>
+                                <p class="text-[10px] text-teal-600 dark:text-teal-400 font-semibold">Triết lý sống mỗi ngày</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Micro-Badge 2 -->
+                        <div class="absolute -bottom-5 -right-4 sm:-right-6 px-4 py-2.5 rounded-2xl glass-panel shadow-lg border border-white/60 dark:border-slate-700 flex items-center gap-2.5 animate-float-delayed z-20">
+                            <span class="text-xl">🌟</span>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800 dark:text-white">Lan Tỏa Yêu Thương</p>
+                                <p class="text-[10px] text-rose-500 font-semibold">Gặp gỡ & Sẻ chia</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="py-20 bg-slate-100/60 dark:bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-teal-600 dark:text-teal-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-teal-500/10 inline-block mb-3">
+                    Đôi nét về tôi
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
+                    Người Giữ Lửa Cho Tình Yêu Cuộc Sống
+                </h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Left: Dual Photos Gallery of Hồng Thịnh -->
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4" data-aos="fade-right">
+                    
+                    <!-- Portrait 1: Professional Portrait -->
+                    <div class="space-y-3">
+                        <div class="rounded-2xl overflow-hidden glass-panel p-2 shadow-lg group img-zoom-container">
+                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-slate-800">
+                                <img src="./assets/images/anh-the-thinh.jpg" 
+                                     alt="Chân dung Hồng Thịnh" 
+                                     class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer"
+                                     data-full-img="./assets/images/anh-the-thinh.jpg"
+                                     data-caption="Hồng Thịnh - Phong thái đĩnh đạc, hiện đại và tràn đầy niềm tin">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all pointer-events-none"></div>
+                                <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/50 text-white text-[11px] backdrop-blur">
+                                    Hiện đại & Năng động
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl glass-panel text-center">
+                            <span class="text-teal-600 dark:text-teal-400 text-lg"><i class="fa-solid fa-compass"></i></span>
+                            <h4 class="font-bold text-sm text-slate-800 dark:text-white mt-1">Không ngừng học hỏi</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Đổi mới để hoàn thiện bản thân mỗi ngày</p>
+                        </div>
+                    </div>
+
+                    <!-- Portrait 2: Traditional Ao Dai Photo -->
+                    <div class="space-y-3 pt-6">
+                        <div class="p-4 rounded-2xl glass-panel text-center">
+                            <span class="text-rose-500 text-lg"><i class="fa-solid fa-heart"></i></span>
+                            <h4 class="font-bold text-sm text-slate-800 dark:text-white mt-1">Trân trọng cội nguồn</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Bản sắc truyền thống và lòng biết ơn</p>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden glass-panel p-2 shadow-lg group img-zoom-container">
+                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-slate-800">
+                                <img src="./assets/images/ao-dai-thinh.jpg" 
+                                     alt="Hồng Thịnh áo dài truyền thống" 
+                                     class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer"
+                                     data-full-img="./assets/images/ao-dai-thinh.jpg"
+                                     data-caption="Hồng Thịnh - Tà áo dài truyền thống với nụ cười thân thiện">
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all pointer-events-none"></div>
+                                <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/50 text-white text-[11px] backdrop-blur">
+                                    Nét Đẹp Truyền Thống
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Bio Story and Principles -->
+                <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white leading-snug">
+                        "Cuộc sống là một bức tranh muôn màu, và tôi chọn tô lên đó những sắc màu tươi sáng nhất."
+                    </h3>
+                    
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Tôi là <strong class="text-teal-600 dark:text-teal-400 font-semibold">Hồng Thịnh</strong>. Với tôi, mỗi sớm bình minh hay một buổi chiều tà đều ẩn chứa những nét đẹp kỳ diệu. Dù cuộc sống có những lúc thăng trầm, chỉ cần tâm mình luôn hướng về những điều thiện lành và tươi sáng, mọi khó khăn rồi cũng sẽ hóa nhẹ nhàng.
+                    </p>
+
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Website này được tôi tạo ra như một ngôi nhà nhỏ chan chứa niềm vui — nơi tôi lưu giữ những hình ảnh đẹp của cuộc đời, chia sẻ những suy ngẫm an lành và là cầu nối để được gặp gỡ, kết giao cùng những người bạn đồng điệu khắp mọi miền.
+                    </p>
+
+                    <!-- 4 Pillars of personality -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl glass-panel border border-slate-200/70 dark:border-slate-800 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">Gần Gũi Thiên Nhiên</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Tìm thấy bình yên từ những điều giản dị quanh mình.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl glass-panel border border-slate-200/70 dark:border-slate-800 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-hands-holding-child"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">Tử Tế & Chân Thành</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Đối đãi với mọi người bằng sự ấm áp và tôn trọng.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl glass-panel border border-slate-200/70 dark:border-slate-800 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-mug-hot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">Thưởng Thức Trọn Vẹn</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Một tách trà ngon, một cuộc trò chuyện chân tình.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl glass-panel border border-slate-200/70 dark:border-slate-800 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-800 dark:text-slate-100">Năng Lượng Tích Cực</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Mỉm cười bắt đầu ngày mới với niềm tin rạng ngời.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Connect Action -->
+                    <div class="pt-2 flex flex-wrap gap-4 items-center">
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm transition-all shadow-md">
+                            Gửi lời nhắn cho Thịnh
+                        </a>
+                        <span class="text-sm text-slate-500 dark:text-slate-400">
+                            Hoặc gọi trực tiếp: <strong class="text-slate-800 dark:text-slate-200">0344.126.866</strong>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PHILOSOPHY & DAILY SPARKS ================= -->
+    <section id="philosophy" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-rose-500 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-rose-500/10 inline-block mb-3">
+                    Góc nhìn & Chiêm nghiệm
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
+                    Triết Lý "Tôi Yêu Cuộc Sống"
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-sm sm:text-base">
+                    Những kim chỉ nam giúp Hồng Thịnh luôn giữ vững sự an yên và niềm vui mỗi ngày.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- 3 Philosophy Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+                
+                <!-- Card 1 -->
+                <div class="rounded-3xl p-8 glass-panel border border-slate-200/80 dark:border-slate-800 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-teal-500 to-emerald-400 text-white flex items-center justify-center text-2xl shadow-lg shadow-teal-500/25 mb-6">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Tâm An Thì Vạn Sự An</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Bình yên không phải là một nơi không có tiếng ồn ào hay sóng gió, mà là giữa giông bão ta vẫn giữ được sự tĩnh tại trong tâm hồn. Hãy bao dung với chính mình và mọi người.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-teal-600 dark:text-teal-400">
+                        #AnYen #TĩnhTại
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="rounded-3xl p-8 glass-panel border border-slate-200/80 dark:border-slate-800 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-400 text-white flex items-center justify-center text-2xl shadow-lg shadow-rose-500/25 mb-6">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Yêu Thương & Biết Ơn</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Lòng biết ơn biến những gì ta có thành đủ đầy. Khi biết ơn từng bữa cơm ngon, từng người bạn tốt, từng hơi thở trong lành, cuộc đời tự khắc ngập tràn phép màu.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-rose-500">
+                        #BiếtƠn #YêuThương
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="rounded-3xl p-8 glass-panel border border-slate-200/80 dark:border-slate-800 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white flex items-center justify-center text-2xl shadow-lg shadow-amber-500/25 mb-6">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Hành Động Tích Cực</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Năng lượng tích cực không tự nhiên sinh ra, nó đến từ việc ta chủ động rèn luyện thể chất, nuôi dưỡng tinh thần, mỉm cười và lan tỏa sự nhiệt thành đến cộng đồng.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs font-semibold text-amber-500">
+                        #NhiệtHuyết #HànhĐộng
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Daily Spark Generator -->
+            <div class="rounded-3xl p-8 sm:p-10 glass-panel border-2 border-teal-500/30 shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute -right-10 -bottom-10 text-9xl text-teal-500/5 select-none pointer-events-none">
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+
+                <div class="max-w-3xl mx-auto text-center space-y-5">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-teal-500/20 text-teal-700 dark:text-teal-300">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Góc Truyền Năng Lượng
+                    </span>
+
+                    <blockquote class="text-xl sm:text-2xl lg:text-3xl font-medium font-serif italic text-slate-800 dark:text-slate-100 leading-relaxed transition-opacity duration-300" id="random-quote-text">
+                        "Mỗi sáng mai thức dậy là một cơ hội mới để bạn sống rực rỡ, yêu thương nhiều hơn và mỉm cười với thế giới."
+                    </blockquote>
+
+                    <p class="text-sm font-semibold text-teal-600 dark:text-teal-400 transition-opacity duration-300" id="random-quote-author">
+                        — Hồng Thịnh — Tôi Yêu Cuộc Sống
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+                        <button id="btn-new-quote" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-bold text-sm shadow-lg shadow-teal-600/30 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all">
+                            <i class="fa-solid fa-dice"></i>
+                            <span>Nhận Thông Điệp Tích Cực Khác</span>
+                        </button>
+
+                        <button id="heart-reaction-btn" class="px-6 py-3 rounded-2xl bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 font-bold text-sm flex items-center gap-2 transition-all">
+                            <i class="fa-solid fa-heart text-rose-500"></i>
+                            <span>Thả tim yêu đời (<span id="heart-counter">168</span>)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PHOTO GALLERY / KHOẢNH KHẮC ================= -->
+    <section id="gallery" class="py-20 bg-slate-100/60 dark:bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-teal-600 dark:text-teal-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-teal-500/10 inline-block mb-3">
+                    Bộ sưu tập
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
+                    Khoảnh Khắc Tươi Đẹp
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-sm sm:text-base">
+                    Lưu giữ những nụ cười, phong thái tự tin và niềm vui trong từng dấu mốc cuộc đời.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Gallery Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Main Card 1: Ao Dai Photo -->
+                <div class="rounded-3xl glass-panel overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-xl group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-[3/4] overflow-hidden img-zoom-container bg-slate-800">
+                        <img src="./assets/images/ao-dai-thinh.jpg" 
+                             alt="Hồng Thịnh trong tà áo dài" 
+                             class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer"
+                             data-full-img="./assets/images/ao-dai-thinh.jpg"
+                             data-caption="Hồng Thịnh - Tà Áo Dài Truyền Thống Việt Nam">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="px-3 py-1 rounded-full bg-teal-500/90 text-[11px] font-bold backdrop-blur">
+                                🇻🇳 Tự hào bản sắc
+                            </span>
+                            <h3 class="text-lg font-bold mt-2">Duyên Dáng Tà Áo Dài</h3>
+                            <p class="text-xs text-slate-300 mt-1">Nét đẹp văn hóa truyền thống kết hợp cùng nụ cười rạng rỡ.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+                        <span><i class="fa-solid fa-camera mr-1"></i> Ảnh gốc sắc nét</span>
+                        <span class="text-teal-600 dark:text-teal-400 cursor-pointer lightbox-trigger" data-full-img="./assets/images/ao-dai-thinh.jpg">
+                            Xem chi tiết <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Main Card 2: Professional Portrait -->
+                <div class="rounded-3xl glass-panel overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-[3/4] overflow-hidden img-zoom-container bg-slate-800">
+                        <img src="./assets/images/anh-the-thinh.jpg" 
+                             alt="Ảnh thẻ Hồng Thịnh" 
+                             class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer"
+                             data-full-img="./assets/images/anh-the-thinh.jpg"
+                             data-caption="Hồng Thịnh - Phong cách lịch lãm, hiện đại">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/90 text-[11px] font-bold backdrop-blur">
+                                ✨ Phong thái đĩnh đạc
+                            </span>
+                            <h3 class="text-lg font-bold mt-2">Bản Lĩnh & Nhiệt Huyết</h3>
+                            <p class="text-xs text-slate-300 mt-1">Sự chỉn chu, nhiệt tâm và phong cách hiện đại.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between text-xs font-semibold text-slate-500 dark:text-slate-400">
+                        <span><i class="fa-solid fa-user-check mr-1"></i> Chân dung chính diện</span>
+                        <span class="text-teal-600 dark:text-teal-400 cursor-pointer lightbox-trigger" data-full-img="./assets/images/anh-the-thinh.jpg">
+                            Xem chi tiết <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Lifestyle & Inspiring Thought -->
+                <div class="rounded-3xl glass-panel p-6 sm:p-8 border border-slate-200/80 dark:border-slate-800 shadow-xl flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-rose-500/15 text-rose-500 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-icons"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-rose-500/10 text-rose-500 text-[11px] font-bold inline-block mb-3">
+                            Khám phá & Trải nghiệm
+                        </span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+                            Những Chuyến Đi Của Thanh Xuân
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            "Mỗi bước chân đi qua những vùng đất mới đều là một cơ hội để lắng nghe, học hỏi và làm giàu thêm vốn sống. Đi để thấy đất nước mình đẹp vô ngần, và con người mình đáng mến xiết bao."
+                        </p>
+                        <div class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-teal-500"></i> Yêu thiên nhiên, sông núi nước non
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-teal-500"></i> Kết bạn bốn phương bằng sự chân tình
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-teal-500"></i> Ghi lại từng dấu ấn bình yên
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Hồng Thịnh Diary</span>
+                        <a href="https://www.facebook.com/thinh.nguyen.10591?locale=vi_VN" target="_blank" class="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">
+                            Xem thêm trên Facebook <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GUESTBOOK / SỔ LƯU BÚT ================= -->
+    <section id="wishes" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-rose-500 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-rose-500/10 inline-block mb-3">
+                    Góc sẻ chia & lưu giữ
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
+                    Sổ Lưu Bút & Lời Chúc Yêu Đời
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-sm sm:text-base">
+                    Hãy để lại đôi dòng tâm tình, lời chúc ấm áp gửi tới Hồng Thịnh để cùng lan tỏa thêm nhiều nụ cười.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Form to leave a message -->
+                <div class="lg:col-span-5 rounded-3xl p-6 sm:p-8 glass-panel border border-slate-200/80 dark:border-slate-800 shadow-xl" data-aos="fade-right">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-nib text-teal-600 dark:text-teal-400"></i>
+                        Gửi lời nhắn cho Hồng Thịnh
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
+                        Lời chúc của bạn sẽ xuất hiện ngay trên bảng lưu niệm này!
+                    </p>
+
+                    <form id="wish-form" class="space-y-4">
+                        <div>
+                            <label for="wish-author" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                Tên của bạn / Biệt danh
+                            </label>
+                            <input type="text" id="wish-author" required placeholder="Ví dụ: Bạn Hải Nam, Cô Mai..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500">
+                        </div>
+
+                        <div>
+                            <label for="wish-input" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                Lời chúc hoặc thông điệp tích cực
+                            </label>
+                            <textarea id="wish-input" rows="4" required placeholder="Gửi một lời chúc an lành, năng lượng tích cực..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold text-sm shadow-md shadow-teal-600/30 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 transition-all">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Gửi Lời Chúc Ngay</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Display list of wishes -->
+                <div class="lg:col-span-7 space-y-4" data-aos="fade-left">
+                    <div class="flex items-center justify-between pb-2">
+                        <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-rose-500"></i>
+                            Những lời chúc mới nhất
+                        </h4>
+                        <span class="text-xs text-slate-500">Được cập nhật tự động</span>
+                    </div>
+
+                    <!-- Dynamic container for wish cards -->
+                    <div id="wish-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="py-20 bg-slate-100/60 dark:bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-teal-600 dark:text-teal-400 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-teal-500/10 inline-block mb-3">
+                    Kết nối & Giao lưu
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-serif">
+                    Liên Hệ Trực Tiếp Với Hồng Thịnh
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 mt-3 text-sm sm:text-base">
+                    Tôi luôn sẵn lòng trò chuyện, sẻ chia và kết nối cùng những người bạn mới. Đừng ngần ngại liên hệ nhé!
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-teal-500 to-rose-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Contact Direct Cards (Left) -->
+                <div class="lg:col-span-5 space-y-5" data-aos="fade-right">
+                    
+                    <!-- Phone / Zalo Card -->
+                    <div class="p-6 rounded-3xl glass-panel border border-teal-500/30 shadow-lg relative overflow-hidden group">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">Số Điện Thoại / Zalo</span>
+                                <h3 class="text-2xl font-black text-slate-900 dark:text-white tracking-wide">
+                                    0344 126 866
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">
+                                    Hỗ trợ gọi điện và nhắn tin qua Zalo 24/7.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                            <a href="tel:0344126866" class="flex-1 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold text-center hover:opacity-90 transition-opacity">
+                                <i class="fa-solid fa-phone mr-1.5"></i> Gọi Ngay
+                            </a>
+                            <a href="https://zalo.me/0344126866" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-teal-600 text-white text-xs font-bold text-center hover:bg-teal-700 transition-colors shadow-md shadow-teal-600/30">
+                                <i class="fa-solid fa-comments mr-1.5"></i> Nhắn Tin Zalo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Facebook Card -->
+                    <div class="p-6 rounded-3xl glass-panel border border-blue-500/30 shadow-lg relative overflow-hidden group">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-2xl shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Mạng Xã Hội Facebook</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                    Hồng Thịnh (Nguyễn Thịnh)
+                                </h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">
+                                    Kết bạn để cùng theo dõi những câu chuyện thường nhật.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800">
+                            <a href="https://www.facebook.com/thinh.nguyen.10591?locale=vi_VN" target="_blank" rel="noopener noreferrer" class="block w-full py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold text-center hover:bg-blue-700 transition-colors shadow-md shadow-blue-600/30">
+                                <i class="fa-brands fa-facebook mr-2"></i> Ghé Thăm Facebook Cá Nhân
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Location/Motto Card -->
+                    <div class="p-6 rounded-3xl glass-panel border border-slate-200/80 dark:border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-rose-500/15 text-rose-500 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-800 dark:text-white">Quê Hương Việt Nam</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Nơi chan chứa tình yêu thương và bình yên mỗi ngày.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Contact Message Form (Right) -->
+                <div class="lg:col-span-7 rounded-3xl p-6 sm:p-8 glass-panel border border-slate-200/80 dark:border-slate-800 shadow-xl" data-aos="fade-left">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                        Để lại lời nhắn cá nhân
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">
+                        Bạn có điều muốn tâm tình, trao đổi công việc hay kết nối giao lưu? Điền form bên dưới nhé!
+                    </p>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-name" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                    Họ và tên của bạn <span class="text-rose-500">*</span>
+                                </label>
+                                <input type="text" id="contact-name" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500">
+                            </div>
+
+                            <div>
+                                <label for="contact-phone" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                    Số điện thoại / Zalo của bạn <span class="text-rose-500">*</span>
+                                </label>
+                                <input type="tel" id="contact-phone" required placeholder="09xxxxxxxx" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-subject" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                Chủ đề trò chuyện
+                            </label>
+                            <input type="text" id="contact-subject" placeholder="Giao lưu / Kết nối / Chia sẻ niềm vui..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500">
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                                Nội dung tin nhắn <span class="text-rose-500">*</span>
+                            </label>
+                            <textarea id="contact-message" rows="4" required placeholder="Nội dung lời nhắn của bạn gửi tới Hồng Thịnh..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:border-teal-500 resize-none"></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold text-sm shadow-xl shadow-teal-600/30 flex items-center justify-center gap-2 hover:scale-[1.01] active:scale-95 transition-all">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Gửi Tin Nhắn Cho Hồng Thịnh</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-12 border-t border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Brand Info -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-600 to-rose-500 flex items-center justify-center text-white font-serif font-bold text-base shadow">
+                        HT
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-base text-slate-900 dark:text-white">Hồng Thịnh — Tôi Yêu Cuộc Sống</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Lan tỏa tình yêu thương, nụ cười và năng lượng tích cực mỗi ngày.</p>
+                    </div>
+                </div>
+
+                <!-- Social Quick links -->
+                <div class="flex items-center gap-3">
+                    <a href="https://zalo.me/0344126866" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-teal-600 dark:text-teal-400 flex items-center justify-center hover:scale-110 transition-transform" title="Zalo">
+                        <i class="fa-solid fa-comments"></i>
+                    </a>
+                    <a href="https://www.facebook.com/thinh.nguyen.10591?locale=vi_VN" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center hover:scale-110 transition-transform" title="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="tel:0344126866" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 text-rose-500 flex items-center justify-center hover:scale-110 transition-transform" title="Gọi điện">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© 2026 Hồng Thịnh. Tất cả bản quyền được bảo lưu. Tương thích hoàn hảo với GitHub Pages.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#home" class="hover:text-teal-500 transition-colors">Về đầu trang</a>
+                    <span>•</span>
+                    <a href="https://zalo.me/0344126866" target="_blank" class="hover:text-teal-500 transition-colors">Hotline: 0344.126.866</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING ACTION CONTROLS ================= -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+        
+        <!-- Ambient Sound Player Toggle -->
+        <button id="ambient-sound-toggle" class="w-12 h-12 rounded-full glass-panel border border-teal-500/40 text-teal-600 dark:text-teal-400 shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group" title="Bật/Tắt giai điệu thư giãn">
+            <div class="flex items-end gap-1 sound-waves">
+                <div class="sound-wave-bar"></div>
+                <div class="sound-wave-bar"></div>
+                <div class="sound-wave-bar"></div>
+                <div class="sound-wave-bar"></div>
+            </div>
+        </button>
+
+        <!-- Zalo Fast Floating Button -->
+        <a href="https://zalo.me/0344126866" target="_blank" rel="noopener noreferrer" class="w-13 h-13 p-3.5 rounded-full bg-gradient-to-r from-teal-600 to-cyan-500 text-white shadow-xl shadow-teal-500/40 flex items-center justify-center pulse-glow hover:scale-110 active:scale-95 transition-all" title="Chat Zalo ngay (0344126866)">
+            <i class="fa-solid fa-comments text-xl"></i>
+        </a>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="w-11 h-11 rounded-full bg-slate-900/90 dark:bg-slate-100 text-white dark:text-slate-900 shadow-xl flex items-center justify-center opacity-0 pointer-events-none hover:scale-110 active:scale-95 transition-all" title="Lên đầu trang">
+            <i class="fa-solid fa-arrow-up text-sm"></i>
+        </button>
+    </div>
+
+    <!-- ================= LIGHTBOX IMAGE MODAL ================= -->
+    <div id="lightbox-modal" class="lightbox-modal fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8">
+        <button id="lightbox-close" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-xl flex items-center justify-center transition-colors" title="Đóng">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Phóng to ảnh" class="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl">
+            <p id="lightbox-caption" class="text-white text-sm sm:text-base font-medium mt-4 text-center px-4 drop-shadow"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <!-- AOS Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80
+        });
+    </script>
+    <!-- Custom Main JS -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

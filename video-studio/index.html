@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồng Thịnh Video Studio — Dựng Phim Kỷ Niệm & Thuyết Minh AI</title>
+  <link rel="stylesheet" href="./studio.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header chính của ứng dụng -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-group">
+        <div class="logo-badge">🎬</div>
+        <div>
+          <h1 class="app-title">Hồng Thịnh Video Studio</h1>
+          <p class="app-subtitle">Ứng dụng dựng phim kỷ niệm có lời bình & phụ đề thông minh dành riêng cho chị Hồng Thịnh</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-sample-data" class="btn btn-secondary" title="Dùng ảnh mẫu có sẵn của Chị Thịnh để trải nghiệm nhanh">
+          <span>✨ Nạp ảnh mẫu của Chị Thịnh</span>
+        </button>
+        <button id="btn-open-settings" class="btn btn-outline" title="Cài đặt khóa AI Gemini">
+          <span>⚙️ Khóa AI & Cài đặt</span>
+          <span id="ai-status-badge" class="badge badge-warning">Chưa có API</span>
+        </button>
+        <button id="btn-open-help" class="btn btn-outline" title="Xem hướng dẫn sử dụng">
+          <span>❓ Hướng dẫn</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Thanh tiến trình các bước (Workflow Steps) -->
+  <nav class="step-navigator">
+    <div class="steps-wrapper">
+      <button class="step-tab active" data-step="1">
+        <span class="step-number">1</span>
+        <div class="step-info">
+          <span class="step-label">Bước 1</span>
+          <strong class="step-title">📸 Chọn Ảnh & Video</strong>
+        </div>
+      </button>
+
+      <button class="step-tab" data-step="2">
+        <span class="step-number">2</span>
+        <div class="step-info">
+          <span class="step-label">Bước 2</span>
+          <strong class="step-title">✍️ Soạn Lời Bình & AI</strong>
+        </div>
+      </button>
+
+      <button class="step-tab" data-step="3">
+        <span class="step-number">3</span>
+        <div class="step-info">
+          <span class="step-label">Bước 3</span>
+          <strong class="step-title">🎙️ Giọng Đọc & Âm Thanh</strong>
+        </div>
+      </button>
+
+      <button class="step-tab" data-step="4">
+        <span class="step-number">4</span>
+        <div class="step-info">
+          <span class="step-label">Bước 4</span>
+          <strong class="step-title">💬 Chữ Phụ Đề</strong>
+        </div>
+      </button>
+
+      <button class="step-tab" data-step="5">
+        <span class="step-number">5</span>
+        <div class="step-info">
+          <span class="step-label">Bước 5</span>
+          <strong class="step-title">🎬 Xem Trước & Xuất Video</strong>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Khung nội dung chính -->
+  <main class="main-workspace">
+    <!-- ================= BƯỚC 1: THÊM HÌNH ẢNH & VIDEO ================= -->
+    <section id="step-panel-1" class="step-panel active">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-heading">Bước 1: Chọn và Sắp xếp Ảnh, Video</h2>
+          <p class="panel-desc">Chị hãy kéo thả ảnh từ thư mục máy tính vào ô bên dưới, hoặc bấm nút để chọn các bức ảnh/clip kỷ niệm đẹp nhất.</p>
+        </div>
+        <div class="panel-tools">
+          <label class="btn btn-primary btn-large cursor-pointer">
+            <span>📁 Bấm để chọn Ảnh/Video từ máy</span>
+            <input type="file" id="file-input" multiple accept="image/*,video/*" style="display:none">
+          </label>
+          <button id="btn-clear-all" class="btn btn-danger-outline" style="display:none">
+            <span>🗑️ Xóa hết làm lại</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Vùng thả file -->
+      <div id="drop-zone" class="drop-zone">
+        <div class="drop-zone-content">
+          <div class="drop-icon">🖼️</div>
+          <h3>Kéo và thả ảnh/video từ máy tính vào đây</h3>
+          <p>Hỗ trợ ảnh JPG, PNG, WEBP và các đoạn video ngắn MP4</p>
+          <div class="drop-note">💡 Hoặc bấm nút <strong>"Bấm để chọn Ảnh/Video từ máy"</strong> ở góc trên bên phải</div>
+        </div>
+      </div>
+
+      <!-- Danh sách ảnh đã chọn -->
+      <div id="media-list-container" class="media-list-container" style="display:none">
+        <div class="media-summary-bar">
+          <div>
+            Đã thêm <strong id="media-count">0</strong> tư liệu — Tổng thời lượng ước tính: <strong id="total-duration-label">0</strong> giây
+          </div>
+          <div class="global-duration-setting">
+            <label for="default-duration">Thời gian mỗi ảnh:</label>
+            <select id="default-duration" class="form-select">
+              <option value="3">3 giây (Nhanh vui tươi)</option>
+              <option value="4" selected>4 giây (Vừa vặn êm đềm)</option>
+              <option value="5">5 giây (Thư thái, ngắm kỹ)</option>
+              <option value="6">6 giây (Chậm rãi, nhiều lời bình)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="media-grid" class="media-grid">
+          <!-- Các thẻ ảnh sẽ được nạp bằng JavaScript vào đây -->
+        </div>
+      </div>
+
+      <!-- Thanh điều hướng dưới cùng -->
+      <div class="step-footer">
+        <div></div>
+        <button class="btn btn-primary btn-next" data-next="2">
+          <span>Tiếp tục: Sang Bước 2 (Soạn Lời Bình) ➡️</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= BƯỚC 2: SOẠN LỜI BÌNH & AI ================= -->
+    <section id="step-panel-2" class="step-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-heading">Bước 2: Soạn Lời Bình Thuyết Minh</h2>
+          <p class="panel-desc">Chị có thể tự gõ lời bình, hoặc bấm nút để <strong>Trí tuệ Nhân tạo AI</strong> tự động viết những câu từ cảm động, ý nghĩa nhất.</p>
+        </div>
+      </div>
+
+      <div class="ai-assistant-card">
+        <div class="ai-card-header">
+          <div class="ai-badge-title">
+            <span class="sparkle-icon">✨</span>
+            <strong>Trợ Lý AI Sáng Tác Lời Bình Cảm Động</strong>
+          </div>
+          <span class="ai-tag">Dành cho Chị Hồng Thịnh</span>
+        </div>
+
+        <p class="ai-instruction">Chị hãy bấm chọn một trong các chủ đề ý nghĩa bên dưới, hoặc gõ một vài suy nghĩ ngắn vào ô gợi ý:</p>
+
+        <!-- Các chủ đề 1 chạm -->
+        <div class="preset-topics">
+          <button class="topic-chip active" data-topic="yeu-doi">
+            <span>🌸 Yêu đời & Năng lượng tích cực</span>
+          </button>
+          <button class="topic-chip" data-topic="gia-dinh">
+            <span>👨‍👩‍👧‍👦 Kỷ niệm ấm áp bên gia đình</span>
+          </button>
+          <button class="topic-chip" data-topic="du-lich">
+            <span>🏖️ Chuyến du lịch & Khám phá cuộc sống</span>
+          </button>
+          <button class="topic-chip" data-topic="chuc-mung">
+            <span>🎂 Lời chúc bình an & Hạnh phúc</span>
+          </button>
+          <button class="topic-chip" data-topic="triet-ly">
+            <span>🌿 Chiêm nghiệm & Biết ơn cuộc đời</span>
+          </button>
+        </div>
+
+        <div class="ai-input-row">
+          <div class="ai-input-group">
+            <label for="ai-user-hint">Ý tưởng thêm của chị (nếu có):</label>
+            <input type="text" id="ai-user-hint" class="form-input" placeholder="Ví dụ: Buổi sum vầy cuối tuần với các con, tà áo dài màu tím dạo phố thu...">
+          </div>
+          <button id="btn-generate-ai" class="btn btn-magic">
+            <span class="magic-icon">✨</span>
+            <span>Bấm để AI viết lời bình ngay</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Khung nhập lời bình đầy đủ -->
+      <div class="script-editor-wrapper">
+        <div class="editor-header">
+          <label for="full-script-text"><strong>Toàn bộ Lời bình cho Video:</strong></label>
+          <div class="editor-actions">
+            <button id="btn-auto-split" class="btn btn-outline-small" title="Tự động chia lời bình khớp với số lượng ảnh ở Bước 1">
+              <span>✂️ Tự động chia theo từng ảnh</span>
+            </button>
+            <button id="btn-speak-preview-script" class="btn btn-outline-small" title="Đọc thử lời bình">
+              <span>🔊 Đọc thử lời bình này</span>
+            </button>
+          </div>
+        </div>
+
+        <textarea id="full-script-text" class="script-textarea" rows="7" placeholder="Nội dung lời bình sẽ xuất hiện ở đây sau khi AI viết, hoặc chị có thể tự do gõ và chỉnh sửa lại theo ý mình bất cứ lúc nào..."></textarea>
+      </div>
+
+      <!-- Phân đoạn từng câu theo ảnh -->
+      <div class="segments-section">
+        <h3 class="segments-title">Phân đoạn lời bình theo từng ảnh (Khớp với màn hình):</h3>
+        <p class="segments-desc">Mỗi câu dưới đây sẽ hiển thị thành phụ đề tương ứng khi ảnh đó xuất hiện:</p>
+        <div id="segments-container" class="segments-container">
+          <!-- Các đoạn sẽ được tự động chia và hiển thị ở đây -->
+        </div>
+      </div>
+
+      <div class="step-footer">
+        <button class="btn btn-outline btn-prev" data-prev="1">
+          <span>⬅️ Quay lại Bước 1</span>
+        </button>
+        <button class="btn btn-primary btn-next" data-next="3">
+          <span>Tiếp tục: Sang Bước 3 (Giọng Đọc & Nhạc Nền) ➡️</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= BƯỚC 3: GIỌNG ĐỌC & NHẠC NỀN ================= -->
+    <section id="step-panel-3" class="step-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-heading">Bước 3: Chọn Giọng Thuyết Minh & Nhạc Nền</h2>
+          <p class="panel-desc">Chị có thể chọn giọng đọc tự động truyền cảm của hệ thống, hoặc tự thu âm giọng thật của mình bằng micro máy tính.</p>
+        </div>
+      </div>
+
+      <div class="audio-selection-grid">
+        <!-- Cột 1: Giọng đọc AI tự động -->
+        <div class="audio-card">
+          <div class="card-badge">Lựa chọn 1</div>
+          <h3 class="card-title">🔊 Giọng Đọc Tự Động (Truyền cảm)</h3>
+          <p class="card-subtitle">Hệ thống đọc tự động văn bản ở Bước 2 bằng giọng tiếng Việt chuẩn, không tốn công thu âm.</p>
+
+          <div class="form-group">
+            <label for="voice-select">Chọn giọng đọc tiếng Việt:</label>
+            <select id="voice-select" class="form-select">
+              <!-- Danh sách giọng sẽ được nạp bằng JS -->
+            </select>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-row">
+              <label for="voice-speed">Tốc độ đọc:</label>
+              <span id="speed-val" class="slider-value">Bình thường (1.0x)</span>
+            </div>
+            <input type="range" id="voice-speed" min="0.8" max="1.3" step="0.05" value="0.95" class="form-range">
+            <div class="range-labels">
+              <span>Chậm rãi, lắng đọng</span>
+              <span>Nhanh hơn</span>
+            </div>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-row">
+              <label for="voice-pitch">Độ trầm ấm:</label>
+              <span id="pitch-val" class="slider-value">Ấm áp vừa phải</span>
+            </div>
+            <input type="range" id="voice-pitch" min="0.8" max="1.2" step="0.05" value="1.0" class="form-range">
+          </div>
+
+          <button id="btn-test-voice" class="btn btn-secondary full-width">
+            <span>▶️ Bấm nghe thử giọng này</span>
+          </button>
+        </div>
+
+        <!-- Cột 2: Thu âm trực tiếp bằng micro -->
+        <div class="audio-card">
+          <div class="card-badge">Lựa chọn 2</div>
+          <h3 class="card-title">🎙️ Tự Thu Âm Giọng Của Chị</h3>
+          <p class="card-subtitle">Dùng chính giọng nói ấm áp, gần gũi của chị Hồng Thịnh để gửi gắm tình cảm vào video.</p>
+
+          <div class="recorder-box">
+            <div class="mic-circle" id="mic-indicator">
+              <span id="mic-icon">🎙️</span>
+            </div>
+            <div id="recording-timer" class="timer-display">00:00</div>
+            <p id="recording-status" class="recorder-status">Micro đã sẵn sàng</p>
+
+            <div class="recorder-buttons">
+              <button id="btn-start-record" class="btn btn-record">
+                <span>🔴 Bắt đầu Thu Âm</span>
+              </button>
+              <button id="btn-stop-record" class="btn btn-record-stop" style="display:none">
+                <span>⏹️ Dừng & Lưu Lại</span>
+              </button>
+            </div>
+
+            <!-- Phát lại đoạn vừa thu -->
+            <div id="recorded-playback-wrapper" style="display:none" class="playback-box">
+              <p class="text-success">✅ Đã thu âm xong!</p>
+              <audio id="recorded-audio" controls class="custom-audio-player"></audio>
+              <button id="btn-use-recorded" class="btn btn-small btn-primary">
+                <span>Dùng bản thu này làm lời bình</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phần chọn Nhạc nền (BGM) -->
+      <div class="bgm-section">
+        <h3 class="bgm-title">🎵 Nhạc Nền Thư Giãn Dưới Lời Bình</h3>
+        <p class="bgm-desc">Âm nhạc du dương sẽ tự động giảm nhỏ âm lượng khi giọng thuyết minh cất lên (Audio Ducking) để lời bình nghe rõ nhất.</p>
+
+        <div class="bgm-options">
+          <label class="bgm-radio-card active">
+            <input type="radio" name="bgm-choice" value="piano" checked>
+            <div class="bgm-card-content">
+              <strong>🎹 Piano Dịu Êm</strong>
+              <small>Giai điệu nhẹ nhàng, sâu lắng, thư thái</small>
+            </div>
+          </label>
+
+          <label class="bgm-radio-card">
+            <input type="radio" name="bgm-choice" value="acoustic">
+            <div class="bgm-card-content">
+              <strong>🎸 Acoustic Tươi Vui</strong>
+              <small>Ấm áp, tràn đầy năng lượng tích cực</small>
+            </div>
+          </label>
+
+          <label class="bgm-radio-card">
+            <input type="radio" name="bgm-choice" value="meditation">
+            <div class="bgm-card-content">
+              <strong>🌿 Thư Thái Bình Yên</strong>
+              <small>Tiếng nhạc thiền và suối nước êm dịu</small>
+            </div>
+          </label>
+
+          <label class="bgm-radio-card">
+            <input type="radio" name="bgm-choice" value="none">
+            <div class="bgm-card-content">
+              <strong>🔇 Không dùng nhạc nền</strong>
+              <small>Chỉ có tiếng lời bình</small>
+            </div>
+          </label>
+        </div>
+
+        <div class="bgm-volume-slider">
+          <label for="bgm-volume">Âm lượng nhạc nền:</label>
+          <input type="range" id="bgm-volume" min="0.05" max="0.5" step="0.05" value="0.15" class="form-range">
+          <span id="bgm-vol-display" class="slider-value">15% (Vừa vặn không lấn át tiếng nói)</span>
+        </div>
+      </div>
+
+      <div class="step-footer">
+        <button class="btn btn-outline btn-prev" data-prev="2">
+          <span>⬅️ Quay lại Bước 2</span>
+        </button>
+        <button class="btn btn-primary btn-next" data-next="4">
+          <span>Tiếp tục: Sang Bước 4 (Chữ Phụ Đề) ➡️</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= BƯỚC 4: TÙY CHỈNH CHỮ PHỤ ĐỀ ================= -->
+    <section id="step-panel-4" class="step-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-heading">Bước 4: Tùy Chỉnh Chữ Phụ Đề (Subtitles)</h2>
+          <p class="panel-desc">Tùy biến chữ hiển thị to rõ, màu sắc trang nhã, dễ đọc trên cả điện thoại và màn hình tivi.</p>
+        </div>
+      </div>
+
+      <div class="subtitle-customizer-grid">
+        <!-- Bảng tùy chỉnh -->
+        <div class="customizer-controls">
+          <div class="form-group">
+            <label>Cỡ chữ phụ đề (Khuyên dùng To rõ cho dễ đọc):</label>
+            <div class="button-toggle-group" id="sub-size-group">
+              <button class="toggle-btn" data-val="26">Vừa (26px)</button>
+              <button class="toggle-btn active" data-val="34">To rõ (34px)</button>
+              <button class="toggle-btn" data-val="42">Rất to (42px)</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Màu sắc chữ phụ đề:</label>
+            <div class="color-palette" id="sub-color-palette">
+              <button class="color-dot active" style="background: #FFFDF0; border-color: #E2B855;" data-color="#FFFDF0" title="Trắng ngà sang trọng"></button>
+              <button class="color-dot" style="background: #FEE75C; border-color: #E2B855;" data-color="#FEE75C" title="Vàng kim nổi bật"></button>
+              <button class="color-dot" style="background: #FFE2EC; border-color: #E96479;" data-color="#FFE2EC" title="Hồng phấn ngọt ngào"></button>
+              <button class="color-dot" style="background: #E0F7FA; border-color: #00BCD4;" data-color="#E0F7FA" title="Xanh ngọc mát dịu"></button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Khung nền chữ (Giúp chữ rõ nét trên mọi bức ảnh):</label>
+            <div class="button-toggle-group" id="sub-bg-group">
+              <button class="toggle-btn active" data-val="glass">Mờ kính (Tự nhiên)</button>
+              <button class="toggle-btn" data-val="shadow">Đổ bóng viền đen</button>
+              <button class="toggle-btn" data-val="bar">Dải băng đen mờ</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Vị trí hiển thị chữ trên màn hình:</label>
+            <div class="button-toggle-group" id="sub-pos-group">
+              <button class="toggle-btn active" data-val="bottom">Dưới cùng (Chuẩn phim)</button>
+              <button class="toggle-btn" data-val="center">Ở giữa (Nổi bật phong cách mới)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khung xem trước phụ đề mẫu -->
+        <div class="subtitle-preview-box">
+          <div class="preview-backdrop" id="sub-preview-stage">
+            <img src="../Anh the Thinh.jpg" alt="Ảnh nền mẫu" class="backdrop-img" id="sub-backdrop-img">
+            <div id="sample-subtitle-container" class="sample-sub-container pos-bottom style-glass">
+              <span id="sample-sub-text" style="font-size: 34px; color: #FFFDF0;">
+                "Mỗi ngày mới là một món quà vô giá của cuộc sống."
+              </span>
+            </div>
+          </div>
+          <p class="preview-caption">👁️ Đây là cách chữ phụ đề sẽ hiển thị trên video thực tế của chị</p>
+        </div>
+      </div>
+
+      <div class="step-footer">
+        <button class="btn btn-outline btn-prev" data-prev="3">
+          <span>⬅️ Quay lại Bước 3</span>
+        </button>
+        <button class="btn btn-primary btn-next" data-next="5">
+          <span>Tiếp tục: Sang Bước 5 (Xem Trước & Xuất Video) 🎬</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= BƯỚC 5: XEM TRƯỚC & XUẤT VIDEO ================= -->
+    <section id="step-panel-5" class="step-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-heading">Bước 5: Xem Trước & Xuất Video Hoàn Chỉnh</h2>
+          <p class="panel-desc">Chị hãy bấm Phát video để ngắm nhìn thành quả. Khi ưng ý, bấm nút Xuất Video để lưu trực tiếp vào máy tính của chị.</p>
+        </div>
+      </div>
+
+      <div class="render-workspace-grid">
+        <!-- Màn hình chiếu video Canvas -->
+        <div class="player-container">
+          <div class="video-screen-wrapper" id="video-screen-wrapper">
+            <canvas id="studio-canvas" width="1280" height="720"></canvas>
+            <div id="player-loading-overlay" class="player-overlay" style="display:none">
+              <div class="spinner"></div>
+              <p>Đang chuẩn bị khung hình...</p>
+            </div>
+          </div>
+
+          <!-- Thanh điều khiển phát video -->
+          <div class="player-controls">
+            <button id="btn-play-pause" class="btn btn-play-large">
+              <span id="play-icon">▶️</span>
+              <span id="play-text">Phát thử video</span>
+            </button>
+            <button id="btn-restart-video" class="btn btn-outline" title="Phát lại từ đầu">
+              <span>🔄 Bắt đầu lại</span>
+            </button>
+            <div class="playback-time-badge">
+              <span id="current-play-time">00:00</span> / <span id="total-play-time">00:00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bảng tùy chọn xuất video -->
+        <div class="export-sidebar">
+          <div class="export-card">
+            <h3 class="export-title">🎬 Xuất Video MP4 về máy</h3>
+            <p class="export-note">Video được kết xuất với độ nét cao, âm thanh trong trẻo, chữ phụ đề sắc nét.</p>
+
+            <div class="form-group">
+              <label>Khung hình Video:</label>
+              <div class="ratio-selector">
+                <label class="ratio-card active">
+                  <input type="radio" name="video-ratio" value="16:9" checked>
+                  <strong>16:9 Màn hình ngang</strong>
+                  <small>Xem trên Tivi, Máy tính, Facebook, YouTube</small>
+                </label>
+                <label class="ratio-card">
+                  <input type="radio" name="video-ratio" value="9:16">
+                  <strong>9:16 Màn hình dọc</strong>
+                  <small>Xem trên Điện thoại, TikTok, Reels, Zalo</small>
+                </label>
+              </div>
+            </div>
+
+            <!-- Nút xuất trực tiếp -->
+            <button id="btn-export-direct" class="btn btn-success btn-giant full-width">
+              <span class="giant-icon">💾</span>
+              <div>
+                <strong>BẤM ĐỂ XUẤT VIDEO VỀ MÁY TÍNH</strong>
+                <small>Lưu thẳng file MP4 vào máy chỉ trong giây lát</small>
+              </div>
+            </button>
+
+            <!-- Khung thông báo tiến độ xuất video -->
+            <div id="export-progress-box" class="progress-box" style="display:none">
+              <div class="progress-bar-track">
+                <div id="export-progress-bar" class="progress-bar-fill" style="width: 0%"></div>
+              </div>
+              <p id="export-progress-text" class="progress-text">Đang ghi hình video: 0%...</p>
+            </div>
+
+            <div class="export-divider"><span>HOẶC</span></div>
+
+            <!-- Tùy chọn xuất bằng FFmpeg -->
+            <button id="btn-generate-ffmpeg" class="btn btn-outline full-width">
+              <span>⚡ Tạo file chạy bằng FFmpeg (Chất lượng 1080p cực nét)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-footer">
+        <button class="btn btn-outline btn-prev" data-prev="4">
+          <span>⬅️ Quay lại Bước 4</span>
+        </button>
+        <div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= MODAL CÀI ĐẶT & KHÓA AI GEMINI ================= -->
+  <div id="settings-modal" class="modal-overlay" style="display:none">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>⚙️ Cài Đặt Khóa AI (Google Gemini API Key)</h3>
+        <button class="modal-close" id="btn-close-settings">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          Khóa API (API Key) giúp ứng dụng kết nối trực tiếp với trí tuệ nhân tạo Gemini của Google để tự động học hỏi, sáng tác lời bình thơ ca cảm động và gợi ý phụ đề thông minh.
+        </p>
+
+        <div class="form-group">
+          <label for="gemini-api-key"><strong>Nhập mã Google Gemini API Key của chị:</strong></label>
+          <input type="password" id="gemini-api-key" class="form-input" placeholder="Dán mã bắt đầu bằng AIzaSy...">
+          <small class="form-help">Khóa API được lưu trữ bí mật và an toàn ngay trên trình duyệt máy tính của chị.</small>
+        </div>
+
+        <div class="guide-box">
+          <h4>💡 Hướng dẫn lấy khóa API Gemini Miễn Phí (Chỉ mất 1 phút):</h4>
+          <ol class="guide-steps">
+            <li>Truy cập trang web chính thức của Google: <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener"><strong>https://aistudio.google.com/app/apikey</strong></a></li>
+            <li>Đăng nhập bằng tài khoản Gmail của chị và nhấn nút <strong>"Create API key"</strong>.</li>
+            <li>Sao chép (Copy) đoạn mã vừa tạo và dán vào ô bên trên rồi bấm <strong>"Lưu cài đặt"</strong>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-test-gemini" class="btn btn-secondary">
+          <span>Kiểm tra kết nối</span>
+        </button>
+        <button id="btn-save-settings" class="btn btn-primary">
+          <span>💾 Lưu Cài Đặt</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL HƯỚNG DẪN SỬ DỤNG ================= -->
+  <div id="help-modal" class="modal-overlay" style="display:none">
+    <div class="modal-card modal-large">
+      <div class="modal-header">
+        <h3>📖 Hướng Dẫn Sử Dụng Dành Cho Chị Hồng Thịnh</h3>
+        <button class="modal-close" id="btn-close-help">✕</button>
+      </div>
+
+      <div class="modal-body help-content">
+        <div class="help-step-item">
+          <span class="help-num">1</span>
+          <div>
+            <strong>Bước 1: Chọn ảnh & video</strong>
+            <p>Mở thư mục ảnh kỷ niệm trên máy tính, dùng chuột kéo và thả các bức ảnh vào ô nét đứt. Chị có thể kéo ảnh đổi vị trí trước sau tùy ý.</p>
+          </div>
+        </div>
+
+        <div class="help-step-item">
+          <span class="help-num">2</span>
+          <div>
+            <strong>Bước 2: Viết lời bình</strong>
+            <p>Bấm vào các chủ đề gợi ý (Kỷ niệm gia đình, Yêu đời, Du lịch...) rồi nhấn <em>"AI Viết lời bình ngay"</em>. Trí tuệ nhân tạo sẽ viết lời bình văn thơ truyền cảm chỉ sau 2 giây!</p>
+          </div>
+        </div>
+
+        <div class="help-step-item">
+          <span class="help-num">3</span>
+          <div>
+            <strong>Bước 3: Chọn giọng đọc & Nhạc</strong>
+            <p>Chị có thể chọn giọng đọc tự động hoặc tự bấm nút đỏ để đọc giọng của chính mình. Sau đó chọn bản nhạc Piano hoặc Acoustic du dương làm nền.</p>
+          </div>
+        </div>
+
+        <div class="help-step-item">
+          <span class="help-num">4</span>
+          <div>
+            <strong>Bước 4: Chữ phụ đề</strong>
+            <p>Tùy chọn chữ To rõ, màu vàng kim sang trọng hoặc trắng ngọc để dễ đọc trên màn hình điện thoại.</p>
+          </div>
+        </div>
+
+        <div class="help-step-item">
+          <span class="help-num">5</span>
+          <div>
+            <strong>Bước 5: Xem và Lưu phim</strong>
+            <p>Bấm nút <em>"Phát thử video"</em> để xem toàn bộ video chạy chuyển động mượt mà. Cuối cùng bấm <em>"BẤM ĐỂ XUẤT VIDEO VỀ MÁY TÍNH"</em> là video được lưu ngay vào máy tính của chị!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-close-help-btn">
+          <span>Tôi Đã Hiểu Rõ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./studio.js"></script>
+</body>
+</html>

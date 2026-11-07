@@ -1,0 +1,58 @@
+================================================================================
+          HƯỚNG DẪN SỬ DỤNG PHẦN MỀM HỒNG THỊNH VIDEO STUDIO
+          (Dành riêng cho Chị Hồng Thịnh - Sinh năm 1978)
+================================================================================
+
+Kính chào Chị Hồng Thịnh!
+Ứng dụng "Hồng Thịnh Video Studio" đã được thiết kế riêng biệt để giúp chị tạo ra
+những thước phim kỷ niệm gia đình, du lịch và truyền cảm hứng sống tích cực
+chỉ trong vài phút một cách thuận tiện nhất.
+
+--------------------------------------------------------------------------------
+1. CÁCH MỞ ỨNG DỤNG HÀNG NGÀY:
+--------------------------------------------------------------------------------
+- Chị chỉ cần vào thư mục: D:\Website\Hong Thinh\
+- Bấm đúp chuột vào file: "Mo_Hong_Thinh_Studio.bat"
+- Ứng dụng sẽ mở toàn màn hình như một phần mềm chuyên nghiệp trên máy tính của chị.
+
+--------------------------------------------------------------------------------
+2. QUY TRÌNH 5 BƯỚC ĐƠN GIẢN:
+--------------------------------------------------------------------------------
+* BƯỚC 1: CHỌN ẢNH VÀ VIDEO
+  - Kéo ảnh chụp từ điện thoại (đã lưu trên máy) thả trực tiếp vào ô vuông trên màn hình.
+  - Có thể bấm nút "✨ Nạp ảnh mẫu của Chị Thịnh" ở góc trên để dùng thử ngay
+    bức ảnh áo dài và ảnh chân dung sẵn có.
+  - Tăng hoặc giảm thời gian hiển thị mỗi bức ảnh bằng dấu (+) và (-).
+
+* BƯỚC 2: SOẠN LỜI BÌNH & TRỢ LÝ AI
+  - Bấm vào một trong các chủ đề ý nghĩa (Yêu đời, Gia đình, Du lịch, Lời chúc...).
+  - Bấm nút "✨ Bấm để AI viết lời bình ngay" -> Trí tuệ nhân tạo sẽ tự động
+    viết những câu từ cảm động, văn thơ truyền cảm chỉ sau 2 giây.
+  - Chị có thể tự gõ thêm hoặc sửa chữa từng câu theo ý mình.
+
+* BƯỚC 3: CHỌN GIỌNG ĐỌC & NHẠC NỀN
+  - Chọn Giọng đọc tự động truyền cảm (giọng Bắc hoặc giọng Nam êm dịu),
+    hoặc bấm nút Đỏ để tự thu âm giọng nói thật của chị qua micro máy tính.
+  - Chọn bản nhạc nền Piano hoặc Acoustic nhẹ nhàng lồng dưới giọng nói.
+  - Âm nhạc sẽ tự động nhỏ lại khi có giọng đọc để người nghe nghe rõ từng chữ.
+
+* BƯỚC 4: TÙY CHỈNH CHỮ PHỤ ĐỀ (SUBTITLES)
+  - Chọn cỡ chữ "To rõ" (34px hoặc 42px) để dễ đọc.
+  - Chọn màu chữ: Vàng kim sang trọng, Trắng ngà, Hồng phấn hoặc Xanh ngọc.
+  - Hiệu ứng đổ bóng giúp chữ luôn nổi bật trên mọi bức ảnh.
+
+* BƯỚC 5: XEM TRƯỚC VÀ XUẤT VIDEO
+  - Bấm nút "▶️ Phát thử video" để xem toàn bộ video chạy mượt mà kèm âm thanh.
+  - Chọn khung hình Ngang (cho Facebook, Tivi) hoặc Dọc (cho Reels, TikTok, Zalo).
+  - Bấm nút lớn: "💾 BẤM ĐỂ XUẤT VIDEO VỀ MÁY TÍNH" -> Video MP4 chất lượng cao
+    sẽ được lưu trực tiếp vào máy tính của chị!
+
+--------------------------------------------------------------------------------
+3. TÍCH HỢP KHÓA AI (GEMINI API KEY):
+--------------------------------------------------------------------------------
+- Bấm nút "⚙️ Khóa AI & Cài đặt" ở góc trên màn hình.
+- Nhập mã Google Gemini API Key để AI học hỏi và sáng tạo kịch bản theo phong cách riêng của chị.
+- (Nếu chưa có mã API, ứng dụng vẫn hoạt động bình thường với kho kịch bản chọn lọc sẵn có).
+
+Chúc Chị Hồng Thịnh có những thước phim kỷ niệm tuyệt đẹp và tràn ngập niềm vui!
+================================================================================
