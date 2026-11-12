@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sống Khỏe Mỗi Ngày Cùng Hồng Thịnh — Sức khỏe là tài sản quý giá nhất</title>
+  <meta name="description" content="Website chăm sóc sức khỏe cá nhân của Nguyễn Thị Hồng Thịnh. Chia sẻ kiến thức dinh dưỡng, vận động nhẹ nhàng, giấc ngủ, góc sống khỏe tuổi trung niên và Trợ lý AI hỗ trợ 24/7." />
+  <meta name="keywords" content="sống khỏe mỗi ngày, Hồng Thịnh, chăm sóc sức khỏe tuổi trung niên, dinh dưỡng, vận động nhẹ nhàng, trợ lý AI sức khỏe" />
+  <meta property="og:title" content="Sống Khỏe Mỗi Ngày Cùng Hồng Thịnh" />
+  <meta property="og:description" content="Sức khỏe là tài sản quý giá nhất. Kiến thức sống khỏe, công cụ tiện ích và Trợ lý AI thân thiện." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Thanh tiện ích trên cùng -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <p class="top-slogan" id="top-slogan">🌿 Sức khỏe là tài sản quý giá nhất.</p>
+      <div class="top-actions">
+        <div class="font-controls" aria-label="Điều chỉnh cỡ chữ">
+          <span>Cỡ chữ:</span>
+          <button type="button" class="btn-font" id="font-decrease" title="Thu nhỏ chữ">A-</button>
+          <button type="button" class="btn-font" id="font-reset" title="Cỡ chữ mặc định">A</button>
+          <button type="button" class="btn-font" id="font-increase" title="Phóng to chữ">A+</button>
+        </div>
+        <a href="tel:0344126866" class="top-link" id="top-phone-link">📞 0344 126 866</a>
+        <a href="https://zalo.me/0344126866" target="_blank" rel="noopener" class="top-link" id="top-zalo-link">💬 Zalo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Menu chính -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#trang-chu" class="brand" data-nav="home">
+        <img src="/images/ao-dai-thinh.jpg" alt="Ảnh đại diện Nguyễn Thị Hồng Thịnh" class="brand-avatar" id="header-avatar" />
+        <div class="brand-text">
+          <span class="brand-title" id="header-site-name">SỐNG KHỎE MỖI NGÀY CÙNG HỒNG THỊNH</span>
+          <span class="brand-sub" id="header-owner-name">Nguyễn Thị Hồng Thịnh</span>
+        </div>
+      </a>
+
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Mở menu điều hướng">
+        ☰ Menu
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Điều hướng chính">
+        <a href="#trang-chu" class="nav-link active" data-nav="home">Trang chủ</a>
+        <a href="#kien-thuc" class="nav-link" data-nav="knowledge">Kiến thức sức khỏe</a>
+        <a href="#trung-nien" class="nav-link" data-nav="middle-age">Tuổi trung niên</a>
+        <a href="#blog" class="nav-link" data-nav="blog">Blog chia sẻ</a>
+        <a href="#hoi-dap-ai" class="nav-link nav-ai" data-nav="ai">🤖 Hỏi đáp AI</a>
+        <a href="#cong-cu" class="nav-link" data-nav="tools">Tiện ích</a>
+        <a href="#lien-he" class="nav-link" data-nav="contact">Liên hệ</a>
+        <a href="#quan-tri" class="nav-link nav-admin" data-nav="admin">⚙️ Quản trị</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app-main">
+    <!-- ==================== 1. TRANG CHỦ ==================== -->
+    <section id="view-home" class="page-view active">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="badge badge-green">✨ Ngôi nhà sức khỏe chủ động</span>
+            <h1 id="hero-site-title">SỐNG KHỎE MỖI NGÀY CÙNG HỒNG THỊNH</h1>
+            <p class="hero-slogan" id="hero-slogan">“Sức khỏe là tài sản quý giá nhất.”</p>
+            <p class="hero-bio" id="hero-bio">
+              Xin chào quý cô bác, anh chị và các bạn! Tôi là Nguyễn Thị Hồng Thịnh. Tôi xây dựng ngôi nhà nhỏ này với mong muốn lan tỏa những kiến thức chăm sóc sức khỏe chủ động, thói quen ăn uống lành mạnh, vận động nhẹ nhàng và tinh thần lạc quan mỗi ngày.
+            </p>
+            <div class="hero-cta">
+              <button type="button" class="btn btn-primary btn-lg" data-nav="ai">🤖 Trò chuyện cùng Trợ lý AI</button>
+              <a href="tel:0344126866" class="btn btn-outline btn-lg" id="hero-call-btn">📞 Gọi 0344 126 866</a>
+              <a href="https://zalo.me/0344126866" target="_blank" rel="noopener" class="btn btn-sky btn-lg" id="hero-zalo-btn">💬 Nhắn Zalo</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="portrait-wrap">
+              <img src="/images/ao-dai-thinh.jpg" alt="Nguyễn Thị Hồng Thịnh" class="hero-portrait" id="hero-avatar" />
+            </div>
+            <div class="hero-card-info">
+              <h2 id="hero-owner-name">NGUYỄN THỊ HỒNG THỊNH</h2>
+              <p>Người đồng hành chia sẻ lối sống khỏe &amp; tích cực</p>
+              <div class="hero-quick-links">
+                <button type="button" class="btn btn-sm btn-soft" data-nav="tools">🧮 Tính BMI &amp; Lịch uống nước</button>
+                <button type="button" class="btn btn-sm btn-soft" id="btn-share-site">🔗 Chia sẻ website</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Trụ cột sức khỏe -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>5 Trụ Cột Sống Khỏe Mỗi Ngày</h2>
+            <p>Chạm vào từng chủ đề để xem bài viết hướng dẫn dễ hiểu, gần gũi</p>
+          </div>
+          <div class="pillar-grid">
+            <button type="button" class="pillar-card" data-category-jump="dinh-duong">
+              <span class="pillar-icon">🥗</span>
+              <h3>Dinh dưỡng</h3>
+              <p>Ăn uống cân đối, giảm mặn, tăng rau xanh</p>
+            </button>
+            <button type="button" class="pillar-card" data-category-jump="van-dong">
+              <span class="pillar-icon">🚶‍♀️</span>
+              <h3>Vận động</h3>
+              <p>Giãn cơ nhẹ nhàng, đi bộ dẻo dai mỗi ngày</p>
+            </button>
+            <button type="button" class="pillar-card" data-category-jump="giac-ngu">
+              <span class="pillar-icon">🌙</span>
+              <h3>Giấc ngủ</h3>
+              <p>Ngủ sâu tự nhiên, thư giãn buổi tối</p>
+            </button>
+            <button type="button" class="pillar-card" data-category-jump="tinh-than">
+              <span class="pillar-icon">🌸</span>
+              <h3>Tinh thần</h3>
+              <p>Thở sâu, giữ tâm an và niềm vui sống</p>
+            </button>
+            <button type="button" class="pillar-card" data-category-jump="phong-benh">
+              <span class="pillar-icon">🛡️</span>
+              <h3>Phòng bệnh</h3>
+              <p>Khám định kỳ, uống đủ nước, giữ ấm</p>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bài viết nổi bật -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-head row-between">
+            <div>
+              <h2>Bài Viết Nổi Bật</h2>
+              <p>Những chia sẻ được cô bác và anh chị quan tâm nhiều nhất</p>
+            </div>
+            <button type="button" class="btn btn-outline" data-nav="knowledge">Xem tất cả bài viết →</button>
+          </div>
+          <div class="article-grid" id="featured-articles-grid"></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== 2. KIẾN THỨC SỨC KHỎE ==================== -->
+    <section id="view-knowledge" class="page-view">
+      <div class="container section">
+        <div class="page-banner">
+          <h1>Kiến Thức Sức Khỏe Phổ Thông</h1>
+          <p>Thông tin dễ đọc, thiết thực về dinh dưỡng, vận động, giấc ngủ, tinh thần và phòng bệnh chủ động.</p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-box">
+            <input type="search" id="article-search-input" placeholder="Tìm kiếm bài viết (ví dụ: ngủ ngon, rau xanh, đi bộ)..." aria-label="Tìm kiếm bài viết" />
+            <button type="button" class="btn btn-primary" id="article-search-btn">🔍 Tìm</button>
+          </div>
+          <div class="category-pills" id="category-pills">
+            <button type="button" class="pill active" data-cat="all">Tất cả</button>
+            <button type="button" class="pill" data-cat="dinh-duong">Dinh dưỡng</button>
+            <button type="button" class="pill" data-cat="van-dong">Vận động</button>
+            <button type="button" class="pill" data-cat="giac-ngu">Giấc ngủ</button>
+            <button type="button" class="pill" data-cat="tinh-than">Tinh thần</button>
+            <button type="button" class="pill" data-cat="phong-benh">Phòng bệnh</button>
+            <button type="button" class="pill" data-cat="trung-nien">Tuổi trung niên</button>
+            <button type="button" class="pill" data-cat="blog">Blog chia sẻ</button>
+          </div>
+        </div>
+
+        <div class="article-grid" id="knowledge-articles-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. GÓC SỐNG KHỎE TUỔI TRUNG NIÊN ==================== -->
+    <section id="view-middle-age" class="page-view">
+      <div class="container section">
+        <div class="page-banner banner-sky">
+          <h1>Góc Sống Khỏe Tuổi Trung Niên</h1>
+          <p>Bài tập nhẹ nhàng vừa sức, thực đơn tham khảo thanh đạm và thói quen tích cực mỗi ngày.</p>
+        </div>
+
+        <div class="two-col-cards">
+          <div class="info-card">
+            <h2>🧘‍♀️ Bài Tập Nhẹ Nhàng Buổi Sáng (10 Phút)</h2>
+            <ul class="clean-list">
+              <li><strong>Bước 1 (2 phút):</strong> Ngồi thẳng lưng, hít sâu bằng mũi 4 giây, thở chậm bằng miệng 6 giây.</li>
+              <li><strong>Bước 2 (3 phút):</strong> Xoay nhẹ cổ tay, cổ chân và khớp vai theo vòng tròn chậm rãi.</li>
+              <li><strong>Bước 3 (5 phút):</strong> Đứng vươn hai tay lên cao, nghiêng lườn nhẹ sang trái – phải.</li>
+            </ul>
+            <p class="note-muted">Lưu ý: Thực hiện chậm rãi, dừng ngay nếu thấy chóng mặt hoặc đau nhói.</p>
+          </div>
+
+          <div class="info-card">
+            <h2>🍲 Thực Đơn Tham Khảo Trong Ngày</h2>
+            <ul class="clean-list">
+              <li><strong>Bữa sáng:</strong> Cháo yến mạch hoặc bún/phở ít béo + rau thơm + 1 ly nước ấm.</li>
+              <li><strong>Bữa trưa:</strong> Cơm vừa phải + cá hấp gừng/đậu phụ + canh rau xanh + trái cây ít ngọt.</li>
+              <li><strong>Bữa tối:</strong> Ăn nhẹ trước 19h30 với rau củ luộc, súp hoặc canh thanh đạm.</li>
+            </ul>
+            <p class="note-muted">Thực đơn mang tính tham khảo phổ thông, điều chỉnh theo tình trạng sức khỏe cá nhân.</p>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top: 2.5rem;">
+          <h2>Bài Viết Dành Riêng Cho Tuổi Trung Niên</h2>
+        </div>
+        <div class="article-grid" id="middle-age-articles-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. BLOG CHIA SẺ ==================== -->
+    <section id="view-blog" class="page-view">
+      <div class="container section">
+        <div class="page-banner">
+          <h1>Blog Chia Sẻ &amp; Kinh Nghiệm Sống Khỏe</h1>
+          <p>Những câu chuyện đời thường, bài viết và hướng dẫn hữu ích từ cô Nguyễn Thị Hồng Thịnh.</p>
+        </div>
+        <div class="article-grid" id="blog-articles-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. HỎI ĐÁP CÙNG AI ==================== -->
+    <section id="view-ai" class="page-view">
+      <div class="container section">
+        <div class="page-banner banner-ai">
+          <h1>🤖 Trợ Lý AI Sống Khỏe 24/7</h1>
+          <p>Hỏi đáp kiến thức dinh dưỡng, vận động, giấc ngủ, tìm bài viết phù hợp và hướng dẫn kết nối với cô Hồng Thịnh.</p>
+        </div>
+
+        <div class="safety-box">
+          <strong>⚠️ Lưu ý an toàn &amp; bảo mật:</strong>
+          Trợ lý AI chỉ cung cấp thông tin tham khảo phổ thông, <strong>không chẩn đoán bệnh, không kê đơn hoặc thay thế bác sĩ</strong>.
+          Vui lòng <strong>không nhập bệnh án hay thông tin cá nhân nhạy cảm</strong>. Nếu có dấu hiệu cấp cứu (đau ngực, khó thở nặng, yếu liệt...), hãy <strong>gọi ngay 115</strong> hoặc đến cơ sở y tế gần nhất.
+        </div>
+
+        <div id="ai-config-warning" class="config-warning hidden">
+          <h3>⚙️ Trợ lý AI chưa được kích hoạt khóa API</h3>
+          <p>Máy chủ hiện chưa có <code>GEMINI_API_KEY</code>. Chủ website vui lòng xem hướng dẫn nhập khóa Gemini API vào tệp <code>.env</code> để chatbot hoạt động thật.</p>
+        </div>
+
+        <div class="chat-shell">
+          <div class="chat-suggestions">
+            <span>Gợi ý câu hỏi nhanh:</span>
+            <button type="button" class="chip-btn" data-ai-prompt="Gợi ý cho tôi 5 thói quen tốt buổi sáng cho người tuổi trung niên">Thói quen buổi sáng</button>
+            <button type="button" class="chip-btn" data-ai-prompt="Buổi tối nên làm gì để dễ ngủ và ngủ sâu hơn?">Bí quyết ngủ ngon</button>
+            <button type="button" class="chip-btn" data-ai-prompt="Trên website có bài viết nào về dinh dưỡng hoặc vận động nhẹ không?">Tìm bài viết phù hợp</button>
+            <button type="button" class="chip-btn" data-ai-prompt="Tôi muốn liên hệ trực tiếp với cô Nguyễn Thị Hồng Thịnh thì làm thế nào?">Liên hệ Hồng Thịnh</button>
+          </div>
+
+          <div class="chat-messages" id="visitor-chat-messages" aria-live="polite">
+            <div class="chat-msg bot">
+              <div class="chat-bubble">
+                <p>Xin chào cô/bác và anh/chị! Tôi là <strong>Trợ lý AI của website Sống Khỏe Mỗi Ngày Cùng Hồng Thịnh</strong>.</p>
+                <p>Tôi có thể giải thích kiến thức dinh dưỡng, vận động nhẹ nhàng, giấc ngủ, gợi ý thói quen lành mạnh hoặc tìm giúp bài viết phù hợp trên website. Cô/bác đang quan tâm điều gì ạ?</p>
+                <span class="ai-tag">Trợ lý AI hỗ trợ thông tin phổ thông</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="chat-input-form" id="visitor-chat-form">
+            <input type="text" id="visitor-chat-input" maxlength="800" placeholder="Nhập câu hỏi của bạn tại đây (ví dụ: Uống nước thế nào cho hợp lý?)..." required />
+            <button type="submit" class="btn btn-primary btn-lg" id="visitor-chat-send">Gửi câu hỏi</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. CÔNG CỤ TIỆN ÍCH ==================== -->
+    <section id="view-tools" class="page-view">
+      <div class="container section">
+        <div class="page-banner">
+          <h1>Công Cụ Tiện Ích Sống Khỏe</h1>
+          <p>Dễ sử dụng hằng ngày. Mọi số liệu chỉ mang tính tham khảo, riêng sổ tay thói quen được lưu hoàn toàn riêng tư trên thiết bị của bạn.</p>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Công cụ BMI -->
+          <div class="tool-card">
+            <h2>⚖️ Tính Chỉ Số BMI Tham Khảo</h2>
+            <form id="bmi-form" class="stack-form">
+              <label>
+                Chiều cao (cm)
+                <input type="number" id="bmi-height" min="100" max="230" step="0.5" placeholder="Ví dụ: 160" required />
+              </label>
+              <label>
+                Cân nặng (kg)
+                <input type="number" id="bmi-weight" min="25" max="200" step="0.5" placeholder="Ví dụ: 56" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Tính BMI ngay</button>
+            </form>
+            <div id="bmi-result" class="tool-result hidden"></div>
+          </div>
+
+          <!-- Công cụ Lịch uống nước & Vận động -->
+          <div class="tool-card">
+            <h2>💧 Gợi Ý Lịch Uống Nước &amp; Vận Động</h2>
+            <form id="water-form" class="stack-form">
+              <label>
+                Cân nặng hiện tại (kg)
+                <input type="number" id="water-weight" min="30" max="180" placeholder="Ví dụ: 55" required />
+              </label>
+              <label>
+                Mức độ vận động trong ngày
+                <select id="water-activity">
+                  <option value="light">Nhẹ nhàng (đi bộ chậm, việc nhà)</option>
+                  <option value="moderate">Trung bình (tập 30 phút/ngày)</option>
+                  <option value="active">Năng động (tập trên 45 phút/ngày)</option>
+                </select>
+              </label>
+              <button type="submit" class="btn btn-sky">Xem lịch gợi ý</button>
+            </form>
+            <div id="water-result" class="tool-result hidden"></div>
+          </div>
+
+          <!-- Sổ tay thói quen sống khỏe -->
+          <div class="tool-card tool-card-wide">
+            <div class="row-between">
+              <div>
+                <h2>📓 Sổ Tay Thói Quen Sống Khỏe Cá Nhân</h2>
+                <p class="note-muted">🔒 Dữ liệu riêng tư: Lưu trực tiếp trên trình duyệt của riêng bạn, không gửi lên máy chủ.</p>
+              </div>
+              <div class="habit-progress-badge" id="habit-progress-text">0/0 hôm nay</div>
+            </div>
+
+            <div class="habit-list" id="habit-list"></div>
+
+            <form id="habit-add-form" class="habit-add-row">
+              <input type="text" id="habit-new-input" maxlength="100" placeholder="Thêm thói quen mới của riêng bạn (ví dụ: Đọc sách 15 phút)..." required />
+              <button type="submit" class="btn btn-primary">+ Thêm</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. LIÊN HỆ & BẢN TIN ==================== -->
+    <section id="view-contact" class="page-view">
+      <div class="container section">
+        <div class="page-banner">
+          <h1>Liên Hệ &amp; Nhận Bản Tin Sức Khỏe</h1>
+          <p>Kết nối trực tiếp với cô Nguyễn Thị Hồng Thịnh hoặc gửi lời nhắn riêng tư qua biểu mẫu bên dưới.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="info-card">
+            <div class="contact-owner">
+              <img src="/images/anh-the-thinh.jpg" alt="Nguyễn Thị Hồng Thịnh" class="contact-avatar" id="contact-avatar" />
+              <div>
+                <h2 id="contact-owner-name">NGUYỄN THỊ HỒNG THỊNH</h2>
+                <p id="contact-slogan">Sức khỏe là tài sản quý giá nhất.</p>
+              </div>
+            </div>
+
+            <ul class="contact-details">
+              <li><strong>📞 Điện thoại:</strong> <a href="tel:0344126866" id="contact-phone">0344126866</a></li>
+              <li><strong>💬 Zalo:</strong> <a href="https://zalo.me/0344126866" target="_blank" rel="noopener" id="contact-zalo">0344126866 (Nhắn Zalo ngay)</a></li>
+              <li><strong>✉️ Email:</strong> <a href="mailto:hongthinh6866@gmail.com" id="contact-email">hongthinh6866@gmail.com</a></li>
+            </ul>
+
+            <div class="hero-cta" style="margin-top: 1.25rem;">
+              <a href="tel:0344126866" class="btn btn-primary" id="contact-call-btn">📞 Gọi điện</a>
+              <a href="https://zalo.me/0344126866" target="_blank" rel="noopener" class="btn btn-sky" id="contact-zalo-btn">💬 Nhắn Zalo</a>
+              <button type="button" class="btn btn-outline" id="contact-share-btn">🔗 Chia sẻ website</button>
+            </div>
+
+            <!-- Đăng ký nhận bản tin -->
+            <div class="newsletter-box">
+              <h3>📩 Đăng Ký Nhận Bản Tin Sống Khỏe</h3>
+              <p>Nhận bài viết mới và mẹo sống khỏe định kỳ qua email.</p>
+              <form id="newsletter-form" class="stack-form">
+                <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" />
+                <input type="text" id="news-name" placeholder="Tên của bạn (không bắt buộc)" maxlength="100" />
+                <input type="email" id="news-email" placeholder="Địa chỉ email của bạn *" maxlength="120" required />
+                <label class="checkbox-row">
+                  <input type="checkbox" id="news-consent" required />
+                  <span>Tôi đồng ý nhận bản tin chia sẻ kiến thức sức khỏe từ website của cô Nguyễn Thị Hồng Thịnh.</span>
+                </label>
+                <button type="submit" class="btn btn-primary">Đăng ký nhận tin</button>
+              </form>
+              <div id="newsletter-feedback" class="form-feedback hidden"></div>
+            </div>
+          </div>
+
+          <!-- Biểu mẫu gửi tin nhắn -->
+          <div class="info-card">
+            <h2>✉️ Gửi Tin Nhắn Riêng Tư Cho Chủ Website</h2>
+            <p class="note-muted">Thông tin của bạn được bảo mật, chỉ chủ website mới xem được trong trang quản trị và không công khai ra ngoài.</p>
+            <form id="contact-form" class="stack-form" style="margin-top: 1rem;">
+              <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" />
+              <label>
+                Họ và tên *
+                <input type="text" id="c-name" maxlength="100" placeholder="Nhập họ và tên của bạn" required />
+              </label>
+              <label>
+                Số điện thoại
+                <input type="tel" id="c-phone" maxlength="30" placeholder="Ví dụ: 0912345678" />
+              </label>
+              <label>
+                Email
+                <input type="email" id="c-email" maxlength="120" placeholder="Ví dụ: tenban@gmail.com" />
+              </label>
+              <label>
+                Chủ đề quan tâm
+                <select id="c-topic">
+                  <option value="Hỏi đáp kiến thức sức khỏe">Hỏi đáp kiến thức sức khỏe</option>
+                  <option value="Góc sống khỏe tuổi trung niên">Góc sống khỏe tuổi trung niên</option>
+                  <option value="Kết nối trò chuyện cùng cô Hồng Thịnh">Kết nối trò chuyện cùng cô Hồng Thịnh</option>
+                  <option value="Góp ý nội dung website">Góp ý nội dung website</option>
+                </select>
+              </label>
+              <label>
+                Nội dung lời nhắn *
+                <textarea id="c-message" rows="5" maxlength="1500" placeholder="Viết lời nhắn hoặc câu hỏi của bạn..." required></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary btn-lg">Gửi tin nhắn</button>
+            </form>
+            <div id="contact-feedback" class="form-feedback hidden"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. QUẢN TRỊ (ADMIN) ==================== -->
+    <section id="view-admin" class="page-view">
+      <div class="container section">
+        <!-- Form đăng nhập -->
+        <div id="admin-login-box" class="admin-login-card">
+          <h1>🔐 Đăng Nhập Quản Trị Website</h1>
+          <p>Khu vực riêng dành cho chủ website <strong>Nguyễn Thị Hồng Thịnh</strong> để chỉnh sửa thông tin, đăng bài và dùng Trợ lý AI biên tập.</p>
+          <form id="admin-login-form" class="stack-form">
+            <label>
+              Mật khẩu quản trị
+              <input type="password" id="admin-password-input" placeholder="Nhập mật khẩu quản trị..." required />
+            </label>
+            <button type="submit" class="btn btn-primary btn-lg">Đăng nhập</button>
+          </form>
+          <div id="admin-login-error" class="form-feedback error hidden"></div>
+          <p class="note-muted" style="margin-top: 1rem;">
+            Mật khẩu mặc định khi mới cài đặt (nếu chưa đổi trong <code>.env</code>): <code>HongThinh@2026</code>. Hãy đổi mật khẩu ngay khi đưa lên mạng!
+          </p>
+        </div>
+
+        <!-- Bảng điều khiển Quản trị -->
+        <div id="admin-dashboard" class="hidden">
+          <div class="admin-topbar">
+            <div>
+              <h1>⚙️ Bảng Điều Khiển Quản Trị</h1>
+              <p>Xin chào cô <strong>Nguyễn Thị Hồng Thịnh</strong>! Mọi thay đổi tại đây đều được lưu ngay lập tức.</p>
+            </div>
+            <button type="button" class="btn btn-outline" id="admin-logout-btn">Đăng xuất</button>
+          </div>
+
+          <div id="admin-default-pw-alert" class="safety-box hidden">
+            <strong>⚠️ Khuyến nghị bảo mật:</strong> Bạn đang dùng mật khẩu quản trị mặc định. Vui lòng đặt biến <code>ADMIN_PASSWORD</code> trong tệp <code>.env</code> để bảo vệ tài khoản.
+          </div>
+
+          <!-- Thống kê cơ bản -->
+          <div class="stats-grid" id="admin-stats-grid"></div>
+
+          <!-- Tabs quản trị -->
+          <div class="admin-tabs">
+            <button type="button" class="tab-btn active" data-admin-tab="profile">👤 Thông tin &amp; Ảnh</button>
+            <button type="button" class="tab-btn" data-admin-tab="articles">📝 Bài viết</button>
+            <button type="button" class="tab-btn" data-admin-tab="ai-studio">🤖 Trợ lý AI Quản trị</button>
+            <button type="button" class="tab-btn" data-admin-tab="messages">📩 Tin nhắn &amp; Bản tin</button>
+          </div>
+
+          <!-- Tab 1: Thông tin & Ảnh -->
+          <div class="admin-panel active" id="admin-tab-profile">
+            <div class="info-card">
+              <h2>Chỉnh Sửa Thông Tin Chủ Website</h2>
+              <form id="admin-profile-form" class="stack-form">
+                <div class="two-col-inputs">
+                  <label>Họ và tên <input type="text" id="adm-fullName" required /></label>
+                  <label>Tên website <input type="text" id="adm-siteName" required /></label>
+                  <label>Số điện thoại <input type="text" id="adm-phone" required /></label>
+                  <label>Số Zalo <input type="text" id="adm-zalo" required /></label>
+                  <label>Email <input type="email" id="adm-email" required /></label>
+                  <label>Slogan <input type="text" id="adm-slogan" required /></label>
+                </div>
+                <label>
+                  Lời giới thiệu trên Trang chủ
+                  <textarea id="adm-bio" rows="4" required></textarea>
+                </label>
+
+                <div class="two-col-inputs">
+                  <div>
+                    <label>Ảnh đại diện chính (URL hoặc tải ảnh mới)
+                      <input type="text" id="adm-avatar" />
+                    </label>
+                    <div class="upload-row">
+                      <input type="file" id="adm-avatar-file" accept="image/jpeg,image/png,image/webp" />
+                      <button type="button" class="btn btn-sm btn-sky" id="adm-upload-avatar-btn">📤 Tải ảnh lên</button>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Ảnh trang Liên hệ (URL hoặc tải ảnh mới)
+                      <input type="text" id="adm-secondaryPhoto" />
+                    </label>
+                    <div class="upload-row">
+                      <input type="file" id="adm-photo2-file" accept="image/jpeg,image/png,image/webp" />
+                      <button type="button" class="btn btn-sm btn-sky" id="adm-upload-photo2-btn">📤 Tải ảnh lên</button>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg">💾 Lưu thông tin website</button>
+              </form>
+              <div id="admin-profile-feedback" class="form-feedback hidden"></div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Quản lý bài viết -->
+          <div class="admin-panel" id="admin-tab-articles">
+            <div class="info-card" style="margin-bottom: 1.5rem;">
+              <div class="row-between">
+                <h2 id="article-form-heading">✍️ Thêm Bài Viết Mới</h2>
+                <button type="button" class="btn btn-sm btn-soft hidden" id="article-cancel-edit-btn">Hủy sửa</button>
+              </div>
+              <form id="admin-article-form" class="stack-form">
+                <input type="hidden" id="art-id" />
+                <div class="two-col-inputs">
+                  <label>Tiêu đề bài viết * <input type="text" id="art-title" required /></label>
+                  <label>Chuyên mục *
+                    <select id="art-category">
+                      <option value="dinh-duong">Dinh dưỡng</option>
+                      <option value="van-dong">Vận động</option>
+                      <option value="giac-ngu">Giấc ngủ</option>
+                      <option value="tinh-than">Sức khỏe tinh thần</option>
+                      <option value="phong-benh">Phòng bệnh</option>
+                      <option value="trung-nien">Góc sống khỏe tuổi trung niên</option>
+                      <option value="blog">Blog chia sẻ</option>
+                    </select>
+                  </label>
+                </div>
+                <label>Tóm tắt ngắn <input type="text" id="art-summary" placeholder="2-3 câu mô tả ngắn gọn nội dung bài viết" /></label>
+                <label>Nội dung bài viết * <textarea id="art-content" rows="8" required></textarea></label>
+                <div class="two-col-inputs">
+                  <label>Từ khóa tìm kiếm (SEO) <input type="text" id="art-keywords" placeholder="Ví dụ: dinh dưỡng, tuổi trung niên, sống khỏe" /></label>
+                  <label>Trạng thái phê duyệt
+                    <select id="art-status">
+                      <option value="published">Phê duyệt &amp; Đăng công khai</option>
+                      <option value="draft">Lưu bản nháp (chưa đăng)</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="two-col-inputs">
+                  <div>
+                    <label>Ảnh bìa bài viết (tùy chọn)
+                      <input type="text" id="art-coverImage" placeholder="/uploads/... hoặc để trống" />
+                    </label>
+                    <div class="upload-row">
+                      <input type="file" id="art-cover-file" accept="image/jpeg,image/png,image/webp" />
+                      <button type="button" class="btn btn-sm btn-sky" id="art-upload-cover-btn">📤 Tải ảnh bìa</button>
+                    </div>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:0.5rem; justify-content:center;">
+                    <label class="checkbox-row">
+                      <input type="checkbox" id="art-featured" />
+                      <span>Hiển thị ở mục <strong>Bài viết nổi bật</strong> trên Trang chủ</span>
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">💾 Lưu bài viết</button>
+              </form>
+              <div id="admin-article-feedback" class="form-feedback hidden"></div>
+            </div>
+
+            <div class="info-card">
+              <h2>Danh Sách Bài Viết Hiện Có</h2>
+              <div id="admin-articles-list" class="admin-list"></div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Trợ lý AI Quản trị -->
+          <div class="admin-panel" id="admin-tab-ai-studio">
+            <div class="info-card">
+              <h2>🤖 Trợ Lý AI Riêng Cho Chủ Website</h2>
+              <p class="note-muted">AI sẽ tạo <strong>bản nháp</strong> để cô Hồng Thịnh xem, chỉnh sửa và tự quyết định phê duyệt đăng bài. Hệ thống không bao giờ tự ý đăng bài hay gửi tin nhắn.</p>
+
+              <form id="admin-ai-form" class="stack-form" style="margin-top: 1rem;">
+                <div class="two-col-inputs">
+                  <label>Chọn tác vụ AI hỗ trợ
+                    <select id="adm-ai-task">
+                      <option value="write_article">1. Viết bài chia sẻ kiến thức sức khỏe</option>
+                      <option value="weekly_topics">2. Đề xuất 10 chủ đề nội dung mới mỗi tuần</option>
+                      <option value="social_posts">3. Viết nội dung đăng Facebook, Zalo &amp; YouTube</option>
+                      <option value="seo_meta">4. Tạo tiêu đề hấp dẫn, mô tả &amp; từ khóa SEO</option>
+                      <option value="reply_visitor">5. Soạn câu trả lời cho câu hỏi của khách</option>
+                      <option value="summarize_messages">6. Tóm tắt &amp; phân loại tin nhắn khách gửi</option>
+                      <option value="content_plan">7. Đề xuất kế hoạch nội dung 7 ngày / 30 ngày</option>
+                    </select>
+                  </label>
+                  <label id="adm-ai-range-wrap" class="hidden">Phạm vi kế hoạch
+                    <select id="adm-ai-range">
+                      <option value="7">Kế hoạch 7 ngày</option>
+                      <option value="30">Kế hoạch 30 ngày</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>Chủ đề / Câu hỏi cần AI hỗ trợ
+                  <input type="text" id="adm-ai-topic" placeholder="Ví dụ: Lợi ích của việc đi bộ nhẹ 30 phút mỗi sáng" />
+                </label>
+                <label>Ghi chú thêm (tùy chọn)
+                  <textarea id="adm-ai-notes" rows="3" placeholder="Ví dụ: Viết giọng văn ấm áp cho cô bác tuổi 50–70, kèm lời nhắc uống nước..."></textarea>
+                </label>
+
+                <button type="submit" class="btn btn-primary btn-lg" id="adm-ai-run-btn">✨ Tạo bản nháp bằng AI</button>
+              </form>
+
+              <div id="adm-ai-result-wrap" class="hidden" style="margin-top: 1.5rem;">
+                <div class="row-between">
+                  <h3>📄 Bản Nháp Do AI Đề Xuất (Có thể chỉnh sửa trước khi duyệt)</h3>
+                  <span class="ai-tag">Nội dung do AI tạo — cần chủ website duyệt</span>
+                </div>
+                <textarea id="adm-ai-output" rows="12" style="width:100%; margin-top:0.75rem;"></textarea>
+                <div class="hero-cta" style="margin-top: 0.75rem;">
+                  <button type="button" class="btn btn-primary" id="adm-ai-to-article-btn">✅ Chuyển sang trình soạn bài để duyệt &amp; đăng</button>
+                  <button type="button" class="btn btn-outline" id="adm-ai-copy-btn">📋 Sao chép nội dung</button>
+                </div>
+              </div>
+              <div id="adm-ai-error" class="form-feedback error hidden"></div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Tin nhắn & Bản tin -->
+          <div class="admin-panel" id="admin-tab-messages">
+            <div class="info-card" style="margin-bottom: 1.5rem;">
+              <div class="row-between">
+                <h2>📩 Tin Nhắn Khách Truy Cập Gửi (Riêng tư)</h2>
+                <button type="button" class="btn btn-sm btn-sky" id="adm-summarize-msgs-btn">🤖 Dùng AI tóm tắt &amp; phân loại</button>
+              </div>
+              <div id="admin-messages-list" class="admin-list"></div>
+            </div>
+
+            <div class="info-card">
+              <h2>📬 Danh Sách Đăng Ký Nhận Bản Tin (Đã đồng ý)</h2>
+              <div id="admin-subscribers-list" class="admin-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal đọc chi tiết bài viết -->
+  <div id="article-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-article-title">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <button type="button" class="modal-close" id="modal-close-btn" aria-label="Đóng bài viết">✕</button>
+      <div id="modal-article-body"></div>
+    </div>
+  </div>
+
+  <!-- Nút nổi liên hệ nhanh & AI -->
+  <div class="floating-dock" aria-label="Liên hệ nhanh">
+    <a href="tel:0344126866" class="dock-btn dock-call" id="dock-call" title="Gọi 0344126866">📞<span>Gọi ngay</span></a>
+    <a href="https://zalo.me/0344126866" target="_blank" rel="noopener" class="dock-btn dock-zalo" id="dock-zalo" title="Nhắn Zalo">💬<span>Zalo</span></a>
+    <button type="button" class="dock-btn dock-ai" data-nav="ai" title="Hỏi Trợ lý AI">🤖<span>Hỏi AI</span></button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong id="footer-site-name">SỐNG KHỎE MỖI NGÀY CÙNG HỒNG THỊNH</strong>
+        <p id="footer-slogan">Sức khỏe là tài sản quý giá nhất.</p>
+        <p class="footer-disclaimer">
+          Thông tin trên website mang tính tham khảo phổ thông về lối sống lành mạnh, không thay thế tư vấn, chẩn đoán hoặc điều trị của bác sĩ. Khi có vấn đề sức khỏe hoặc dấu hiệu cấp cứu, vui lòng liên hệ cơ sở y tế gần nhất hoặc gọi 115.
+        </p>
+      </div>
+      <div class="footer-contact">
+        <p>Chủ website: <strong id="footer-owner-name">NGUYỄN THỊ HỒNG THỊNH</strong></p>
+        <p>Điện thoại / Zalo: <a href="tel:0344126866" id="footer-phone">0344126866</a></p>
+        <p>Email: <a href="mailto:hongthinh6866@gmail.com" id="footer-email">hongthinh6866@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
